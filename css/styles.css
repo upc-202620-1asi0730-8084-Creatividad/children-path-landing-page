@@ -1082,27 +1082,29 @@ textarea.form-control {
 }
 
 .team-avatar {
-  width: 80px;
-  height: 80px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   background-color: #4A8E8B;
   color: var(--color-white);
   margin: 0 auto 20px;
+  position: relative;
+  overflow: hidden; /* Corta cualquier sobrante para asegurar el círculo */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 1.25rem;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .team-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
   border-radius: 50%;
+  z-index: 2; 
 }
 
 .team-initials {
@@ -1111,8 +1113,10 @@ textarea.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  z-index: 1; 
 }
-
 .team-name {
   font-size: 1.15rem;
   font-weight: 700;
@@ -1377,4 +1381,25 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Mockup del Celular en el Hero --- */
+.hero-mockup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-mockup-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 36px rgba(15, 55, 100, 0.18));
+  transition: var(--transition);
+}
+
+.hero-mockup-img:hover {
+  transform: translateY(-4px) scale(1.02);
 }
